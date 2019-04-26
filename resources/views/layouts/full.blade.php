@@ -9,6 +9,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/toastr.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/jquery.pjax.js') }}"></script>
+<script src="{{ asset('js/toastr.min.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>
 </head>
 <body>
 <header>
@@ -43,10 +48,17 @@
         <input type="search" name="search" required placeholder="Votre recherche"/>
         <input type="submit"/>
     </form>
-    @yield('content')
+    @auth
+        <a href="/nouvelle" data-pjax>Inserer une chanson</a>
+    @endauth
+    <pre>
+        {{print_r(Session::all())}}
+    </pre>
+    <main id="pjax-container">
+        @yield('content')
+    </main>
 </div>
 <!-- Scripts -->
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/script.js') }}"></script>
+
 </body>
 </html>

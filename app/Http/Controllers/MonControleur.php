@@ -43,10 +43,10 @@ class MonControleur extends Controller
         $utilisateur = User::find($id);
 
         if($utilisateur==false){
-            abort(403);
+           return redirect('/')->with('toastr',['status' => 'error', 'message' => 'problème']);
         }
         Auth::user()->jeLesSuit()->toggle($id);
-        return back();
+        return back()->with('toastr',['status' => 'success', 'message' => 'Suivi modifié']);
      }
      public function recherche($s){
         $users = User::whereRaw("name LIKE CONCAT(?,'%')",[$s])->get();

@@ -5,9 +5,9 @@
         @auth
         @if($utilisateur->id != Auth::id())
             @if(Auth::user()->jeLesSuit->contains($utilisateur->id))
-                <a href="/suivi/{{$utilisateur->id}}">Arretez de suivre</a>
+                <a href="/suivi/{{$utilisateur->id}}" data-pjax-toggle>Arretez de suivre</a>
             @else
-            <a href="/suivi/{{$utilisateur->id}}">Suivre</a>            
+            <a href="/suivi/{{$utilisateur->id}}" data-pjax-toggle>Suivre</a>            
             @endif
             <br/>
         @endif
