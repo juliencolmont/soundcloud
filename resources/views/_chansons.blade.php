@@ -1,3 +1,4 @@
+@auth
 <ul id='chansons'>
     @foreach($chansons as $c)
     <li>
@@ -7,3 +8,4 @@
     </li>
     @endforeach
 </ul>
+@endauth
