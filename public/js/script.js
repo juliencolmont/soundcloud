@@ -1,7 +1,13 @@
 $(document).pjax('[data-pjax] a, a[data-pjax]', '#pjax-container')
 $(document).pjax('[data-pjax-toggle] a, a[data-pjax-toggle]', '#pjax-container', {push : false})
+
+$(document).on('submit', 'form[data-pjax]', function(event) {
+    $.pjax.submit(event, '#pjax-container')
+});
+  
+
 $(document).ready(function(){
-    $('#chansons').on('click', 'a', function(e){
+    $('#chansons').on('click', 'a.chanson', function(e){
         e.preventDefault();
         let audio = $("#audio");
         let f = $(this).attr('data-file');
@@ -13,8 +19,13 @@ $(document).ready(function(){
 
     $('#search').submit(function(e){
         e.preventDefault();
-        window.location.href ="/recherche/"+e.target.elements[0].value;
-
+        if ($.support.pjax) {
+            $.pjax({url:"/recherche/" + e.target.elements[0].value, container:'#pjax-container'});
+        
+          }
+        else{
+            window.location.href ="/recherche/"+e.target.elements[0].value;
+        }
     });
 
     $("#testajax").click(function(e){

@@ -29,7 +29,7 @@ class MonControleur extends Controller
             $c->fichier = str_replace("public/","storage/",$c->fichier);
             $c->save();
         }
-        return redirect("/");
+        return redirect("/")->with('toastr',['status' => 'success', 'message' => 'chanson insérée']);
     }
     public function utilisateur($id){
         $utilisateur = User::find($id);

@@ -10,10 +10,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toastr.css') }}" rel="stylesheet">
+    <!-- Scripts -->
     <script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/jquery.pjax.js') }}"></script>
-<script src="{{ asset('js/toastr.min.js') }}"></script>
-<script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/jquery.pjax.js') }}"></script>
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </head>
 <body>
 
