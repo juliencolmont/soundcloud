@@ -17,8 +17,8 @@ class MonControleur extends Controller
         return view("nouvelle");
     }
     public function create (Request $request){
-       // print_r($_FILES);
-       // die(1);
+       /* print_r($_FILES);
+        die(1);*/
         if($request->hasFile('chanson') && $request->file('chanson')->isValid()){
             $c = new Chanson();
             $c->nom = $request->input('nom');

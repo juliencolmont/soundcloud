@@ -1,16 +1,28 @@
+*{
+	box-sizing: border-box;	
+	font-family: 'Baloo Bhai', cursive;
+}
 body{	
 	background-color:#121214;
 	width:100%;
 	margin:0;
 	padding: 0;
-	color:white;
+	color:white;	
 }
 li{
     list-style:none;
 }
 a{
     text-decoration:none;
-    color:white;
+	color:white;
+	font-size:18px;
+}
+.linkLog{
+	color:#0000FF;
+}
+
+.linkMenu{
+	font-size:28px;	
 }
 #header{ 
 	width: 100%;
@@ -23,16 +35,17 @@ a{
 
 .profil{
 	display:flex;
+	justify-content: space-between;
 	align-items: center;
-	margin-top: 4px;
-	margin-left: 20px;
+	margin: 10px 20px;
+}
+.contentLinkProfil{
+	display:flex;
+	align-items: center;	
 }
 
 .profil img{
-	width: 1.5%;
-	height: 2%;
-	margin-right: 10px;
-	z-index: 1;
+	width:30px;
 }
 
 .profil span{
@@ -69,15 +82,21 @@ hr{
     height: 3px;
 	border: 0;
 	background-color: #0000FF;
-
 }
-.recherche{ 
+
+.email, .recherche, .password{ 
 	width: 75%;
     height: 30px;
     background-color:white;	    
     border:none; 
     color:grey;
-    border-radius:330px;
+	border-radius:330px;
+	padding:20px;
+	margin-bottom:20px; 
+	font-size:16px;
+}
+.email, .password{ 
+	text-align:center;
 }
 .btEnvoyer{
     display:none;
@@ -110,7 +129,14 @@ hr{
 	width: 100%;
 	text-align: center;
 }
-
+.containerForm{
+	padding-top:50px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color:#0000FF;
+}
 .banierePub{
 	height: 120px;
 	background: #660000;	
@@ -131,4 +157,17 @@ hr{
 	margin:auto;
 	color:#0000FF;
 }
-
+.BtLog{
+	background-color:#0000FF;
+	border: none;
+	font-size:18px; 
+	border-radius: 10px;
+	padding: 2px 20px;
+	margin:10px 0;
+}
+.BtLog:hover{
+	cursor:pointer;
+}
+.chekbox{
+	border:10px #0000FF solid;
+}

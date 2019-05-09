@@ -7,7 +7,7 @@ $(document).on('submit', 'form[data-pjax]', function(event) {
   
 
 $(document).ready(function(){
-    $('#chansons').on('click', 'a.chanson', function(e){
+    $('#pjax-container').on('click', 'a.chanson', function(e){
         e.preventDefault();
         let audio = $("#audio");
         let f = $(this).attr('data-file');
