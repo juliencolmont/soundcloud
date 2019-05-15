@@ -3,19 +3,13 @@
 @section('content')
 <div class="containerForm">
     <div class="contentFormLog">
+        <img class="logoLogin" src="/img/logo.svg" />
+        <hr/>
         <form method="POST" action="{{ route('login') }}">
             @csrf
-
-            <img class="logoLogin" src="/img/logo.svg" />
-
-            <hr/>
-
-            <div class="itemFlex">
-                <a class="linkLog" href="/register" data-pjax>You do have not an account, register</a>
-            </div>
-
             <div class="form-group row">
                 <div class="col-md-6">
+                <a class="linkLog" href="/register" data-pjax>Do you have not an account ? Register !</a>
                     <input class="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
 
                     @if ($errors->has('email'))
@@ -56,7 +50,7 @@
                     </button><br/>
 
                     @if (Route::has('password.request'))
-                        <a class="linkLog" href="{{ route('password.request') }}">
+                        <a class="linkLog" href="{{ route('password.request') }}" data-pjax>
                             {{ __('Forgot Your Password?') }}
                         </a>
                     @endif

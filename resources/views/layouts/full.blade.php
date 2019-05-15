@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Soundcloud</title>
         <!-- Styles -->
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('css/toastr.css') }}" rel="stylesheet">
@@ -30,8 +30,8 @@
                         <!-- Authentication Links -->
                         <div>
                         @guest
-                            <a href="{{ route('login') }}">Login</a>
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('login') }}" data-pjax>Login</a>
+                            <a href="{{ route('register') }}" data-pjax>Register</a>
                         @else
                             <li> Bonjour {{ Auth::user()->name }} </li>
                         </div>
@@ -57,7 +57,7 @@
                         <hr/>
                     
                         <form id="search">
-                            <input  class="recherche" type="search" name="search" required placeholder=" Votre recherche"/>
+                            <input  class="recherche" type="search" name="search" required placeholder=" Votre recherche" />
                             <input class="btEnvoyer" type="submit"/>
                         </form>
                         
@@ -90,7 +90,7 @@
 
                         <div class="itemFlex">
                             <img class="plus" src="/img/plus.svg" />
-                            <a  href="/nouvelle" data-pjax class="linkMenu">Upload</a>
+                            <a  href="/nouvelle" class="linkMenu" data-pjax >Upload</a>
                         </div>
 
                     </div>

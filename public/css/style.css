@@ -84,7 +84,7 @@ hr{
 	background-color: #0000FF;
 }
 
-.email, .recherche, .password{ 
+.email, .recherche, .password, .name, .style{ 
 	width: 75%;
     height: 30px;
     background-color:white;	    
@@ -92,10 +92,11 @@ hr{
     color:grey;
 	border-radius:330px;
 	padding:20px;
-	margin-bottom:20px; 
+	margin-bottom:10px; 
+	margin-top:10px; 
 	font-size:16px;
 }
-.email, .password{ 
+.email, .password, .name, .style{ 
 	text-align:center;
 }
 .btEnvoyer{
@@ -137,6 +138,9 @@ hr{
 	text-align: center;
 	color:#0000FF;
 }
+.contentFormUp, .contentFormRegister, .contentFormLog, .containerFormForgot{
+	width: 36%;
+}
 .banierePub{
 	height: 120px;
 	background: #660000;	
@@ -152,10 +156,9 @@ hr{
 	height: 40px;
 	position: fixed;
 	bottom: 0;
-	background-color: #222325;
-	opacity: 50%;
-	margin:auto;
 	color:#0000FF;
+	border: 1px solid #0000FF;
+	border-radius: 30px;
 }
 .BtLog{
 	background-color:#0000FF;
@@ -163,11 +166,54 @@ hr{
 	font-size:18px; 
 	border-radius: 10px;
 	padding: 2px 20px;
-	margin:10px 0;
+	margin:20px 0;
+	color:white;
 }
 .BtLog:hover{
 	cursor:pointer;
 }
 .chekbox{
 	border:10px #0000FF solid;
+}
+.input-file{
+	display: none;
+}
+.margin_20{
+	margin-left:20px;
+}
+.content-chanson{
+	padding:20px; 
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.title-chanson{
+	padding:20px; 
+}
+.flex-column{
+	display: flex;
+	flex-direction: column;
+	width: 25%;
+	margin-top:20px;
+	padding-right:10px; 
+	padding-left:10px; 
+}
+.flex-column img{
+	width: 100%;
+}
+.flex-user{
+	display: flex;
+	justify-content: space-between;
+	width:80%;
+	margin-left:auto; 
+	margin-right:auto;
+	font-size:18px;	
+}
+.bar{
+	margin-right:10px;
+	padding-right:10px; 
+	border-right:3px #0000FF solid;
+}
+.number{
+	color:#0000FF;
 }
