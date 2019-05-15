@@ -1,19 +1,38 @@
 @extends('layouts.app')
 @section('content')
+    <div id="pjax-container" class="flex-user">
+        <div>
         {{$utilisateur->name}}
-        <br/>
+        </div>
+        <main id="pjax-container">
         @auth
+<<<<<<< Updated upstream
         @if($utilisateur->id != Auth::id())
             @if(Auth::user()->jeLesSuit->contains($utilisateur->id))
                 <a href="/suivi/{{$utilisateur->id}}">Arretez de suivre</a>
             @else
-            <a href="/suivi/{{$utilisateur->id}}">Suivre</a>            
+            <a href="/suivi/{{$utilisateur->id}}" data-pjax-toggle>Suivre</a>            
+=======
+            @if($utilisateur->id != Auth::id())
+                @if(Auth::user()->jeLesSuit->contains($utilisateur->id))
+                    <a href="/suivi/{{$utilisateur->id}}" data-pjax-toggle>Arretez de suivre</a>
+                @else
+                    <a href="/suivi/{{$utilisateur->id}}" data-pjax-toggle>Suivre</a>            
+                @endif
+                
+>>>>>>> Stashed changes
             @endif
-            <br/>
-        @endif
         @endauth
-        Il suit {{$utilisateur->jeLesSuit->count()}} personne(s) <br/>
-        Il est suivi par {{$utilisateur->ilsMeSuivent->count()}} personne(s)
+        </main>
+        <div>
+            <span class="bar">Subscribers</span><span class="number"> {{$utilisateur->jeLesSuit->count()}} </span>
+        </div>
+        <div>
+            <span class="bar">Followers</span><span class="number"> {{$utilisateur->ilsMeSuivent->count()}} </span>
+        </div>
+
+    </div>
+       
         
         @include("_chansons", ['chansons'=> $utilisateur->chansons])
 
