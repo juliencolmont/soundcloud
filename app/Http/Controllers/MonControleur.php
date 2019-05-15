@@ -19,6 +19,15 @@ class MonControleur extends Controller
     public function create (Request $request){
        /* print_r($_FILES);
         die(1);*/
+        $validator = Validator::make($request->all(),[
+            'nom' => 'required|min:6'
+        ]);
+        if ($validator->fails()) {
+            return redirect('/nouvelle')
+                        ->withErrors($validator)
+                        ->withInput()
+                        ->with('toastr',['status' => 'error', 'message' => 'problème']);
+        }
         if($request->hasFile('chanson') && $request->file('chanson')->isValid()){
             $c = new Chanson();
             $c->nom = $request->input('nom');
@@ -27,6 +36,13 @@ class MonControleur extends Controller
 
             $c->fichier = $request->file('chanson')->store("public/chansons/".Auth::id());
             $c->fichier = str_replace("public/","storage/",$c->fichier);
+            $c->fichier = str_replace("public/","/storage/",$c->fichier);
+            if($request->hasFile('photo') && $request->file('photo')->isValid()){
+                $c->photo = $request->file('photo')->store("public/pochette/".Auth::id());
+                $c->photo = str_replace("public/","/storage/",$c->photo);
+            } else {
+                $c->photo = "/img/pochette.png";
+            }
             $c->save();
         }
         return redirect("/")->with('toastr',['status' => 'success', 'message' => 'chanson insérée']);
