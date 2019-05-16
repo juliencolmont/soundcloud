@@ -11,7 +11,7 @@
                 <div class="col-md-6">
                 <a class="linkLog" href="/register" data-pjax>Do you have not an account ? Register !</a>
                     <input class="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
-
+                    <br/>
                     @if ($errors->has('email'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('email') }}</strong>
@@ -19,6 +19,7 @@
                     @endif
                 </div>
             </div>
+            
 
             <div class="form-group row">
                 <div class="col-md-6">

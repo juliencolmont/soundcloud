@@ -3,7 +3,7 @@
 
     @foreach($chansons as $c)
     <div class="flex-column">
-        <div>
+        <div class="width">
             <img src="{{$c->photo}}"/>
         </div>
         <diV class="center-chanson">

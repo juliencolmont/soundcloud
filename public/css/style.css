@@ -18,7 +18,7 @@ a{
 	font-size:18px;
 }
 a:hover{
-    text-decoration:none;
+    text-decoration:underline;
 	color:#0000FF;
 }
 .linkLog{
@@ -175,6 +175,9 @@ hr{
 }
 .BtLog:hover{
 	cursor:pointer;
+	text-decoration: underline;
+	color:#0000FF;
+	background-color:white;
 }
 .chekbox{
 	border:10px #0000FF solid;
@@ -197,11 +200,12 @@ hr{
 .flex-column{
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	width: 25%;
 	margin-top:20px;
+	padding-bottom:20px; 
 	padding-right:10px; 
 	padding-left:10px;
-	height: 42vh;
 }
 .flex-column img{
 	width: 100%;
@@ -228,4 +232,12 @@ hr{
 }
 .up{
 	font-size: 18px;
+}
+.width{
+	width: 100%;
+	margin-top:auto;
+	margin-bottom:auto;
+}
+.linkLog:hover{
+	color:white;
 }
