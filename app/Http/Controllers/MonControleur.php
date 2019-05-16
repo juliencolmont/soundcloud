@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Chanson;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class MonControleur extends Controller
@@ -35,7 +36,6 @@ class MonControleur extends Controller
             $c->utilisateur_id = Auth::id();
 
             $c->fichier = $request->file('chanson')->store("public/chansons/".Auth::id());
-            $c->fichier = str_replace("public/","storage/",$c->fichier);
             $c->fichier = str_replace("public/","/storage/",$c->fichier);
             if($request->hasFile('photo') && $request->file('photo')->isValid()){
                 $c->photo = $request->file('photo')->store("public/pochette/".Auth::id());

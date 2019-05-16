@@ -17,6 +17,10 @@ a{
 	color:white;
 	font-size:18px;
 }
+a:hover{
+    text-decoration:none;
+	color:#0000FF;
+}
 .linkLog{
 	color:#0000FF;
 }
@@ -196,7 +200,8 @@ hr{
 	width: 25%;
 	margin-top:20px;
 	padding-right:10px; 
-	padding-left:10px; 
+	padding-left:10px;
+	height: 42vh;
 }
 .flex-column img{
 	width: 100%;
@@ -204,6 +209,7 @@ hr{
 .flex-user{
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	width:80%;
 	margin-left:auto; 
 	margin-right:auto;
@@ -216,4 +222,10 @@ hr{
 }
 .number{
 	color:#0000FF;
+}
+.center-chanson{
+	text-align:center;
+}
+.up{
+	font-size: 18px;
 }
